@@ -1,6 +1,14 @@
 *.class
-
-# Package Files #
 *.jar
 *.war
 *.ear
+*~
+*.diff
+*.patch
+build/
+bin/
+.classpath
+.project
+.settings
+.gradle
+gradle.properties

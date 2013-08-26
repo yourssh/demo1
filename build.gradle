@@ -1,0 +1,28 @@
+apply plugin: 'java'
+apply plugin: 'war'
+apply plugin: 'eclipse-wtp'
+
+version = '0.1'
+
+sourceCompatibility = JavaVersion.VERSION_1_6
+targetCompatibility = JavaVersion.VERSION_1_6
+
+allprojects {
+    repositories {
+        mavenCentral()
+    }
+}
+
+dependencies {
+    providedCompile 'javax.servlet:servlet-api:2.5'
+    compile 'org.apache.commons:commons-lang3:3.1'    
+    testCompile "junit:junit:4.9"
+}
+
+eclipse {
+    classpath {
+        containers.clear()
+        containers.add('org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.6')
+        containers.add('org.eclipse.jst.j2ee.internal.web.container')
+    }
+}
